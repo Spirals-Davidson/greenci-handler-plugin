@@ -1,13 +1,13 @@
 # greenci-handler-plugin
 
-This project is according to [greenci-maven-plugin](https://github.com/Spirals-Davidson/greenci-maven-plugin). 
-He is used to print correct log data when you run your test.
+This project works with [greenci-maven-plugin](https://github.com/Spirals-Davidson/greenci-maven-plugin). 
+It is used to print correct log datas when you run your test.
 
-/!\ YOU MUST HAVE IT TO [greenci-maven-plugin](https://github.com/Spirals-Davidson/greenci-maven-plugin) WORK CORRECTLY !
-# Install 
+/!\ YOU MUST ADD IT TO [greenci-maven-plugin](https://github.com/Spirals-Davidson/greenci-maven-plugin) TO WORK CORRECTLY !
+# Installation 
 
 - Clone the project in your computer
-- Do `mvn clean install` 
+- Do `mvn clean install`  inside it
 - In the Maven .m2 configuration file, add :
 ```
   <PluginGroups>
@@ -39,7 +39,7 @@ He is used to print correct log data when you run your test.
 Just put `@RunWith(GreenciTestRunner.class)` annotation on any test class you have. 
 
 # Extends 
-If you want load something before your class is set up without static `@BeforeClass`, 
+If you want to load something before your class is set up without static `@BeforeClass`, 
 you can extends your test class with `GreenciTestListener` like this :
 ```
 public class MyTestClass extends GreenciTestListener {
@@ -51,7 +51,7 @@ public class MyTestClass extends GreenciTestListener {
 ```
 
 # More 
-- If you need to initialized spring boot context, do like that in your test class : (MyTestClass is your test class)
+- If you need to initialize spring boot context, do in your test class : (MyTestClass = your test class name)
 ```
 public class MyTestClass extends GreenciTestListener {
     private TestContextManager testContextManager;
