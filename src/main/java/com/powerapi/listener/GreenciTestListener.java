@@ -9,7 +9,7 @@ import org.slf4j.LoggerFactory;
 
 import java.sql.Timestamp;
 
-public class MyTestListener extends RunListener {
+public class GreenciTestListener extends RunListener {
     private Logger log = LoggerFactory.getLogger(this.getClass());
 
     private long getTimestamp() {

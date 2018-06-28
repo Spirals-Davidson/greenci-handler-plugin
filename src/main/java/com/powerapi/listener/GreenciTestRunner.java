@@ -8,11 +8,11 @@ import org.junit.runners.BlockJUnit4ClassRunner;
 import org.junit.runners.model.InitializationError;
 import org.junit.runners.model.Statement;
 
-public class MyTestRunner extends BlockJUnit4ClassRunner {
+public class GreenciTestRunner extends BlockJUnit4ClassRunner {
 
-    private MyTestListener instanceMyTestListener;
+    private GreenciTestListener instanceMyTestListener;
 
-    public MyTestRunner(Class<?> klass) throws InitializationError {
+    public GreenciTestRunner(Class<?> klass) throws InitializationError {
         super(klass);
     }
 
@@ -21,8 +21,8 @@ public class MyTestRunner extends BlockJUnit4ClassRunner {
         Object test = super.createTest();
         // Note that JUnit4 will call this createTest() multiple times for each
         // test method, so we need to ensure to call "beforeClassSetup" only once.
-        if (test instanceof MyTestListener && instanceMyTestListener == null) {
-            instanceMyTestListener = (MyTestListener) test;
+        if (test instanceof GreenciTestListener && instanceMyTestListener == null) {
+            instanceMyTestListener = (GreenciTestListener) test;
             instanceMyTestListener.beforeClassSetup();
         }
         return test;
@@ -31,7 +31,7 @@ public class MyTestRunner extends BlockJUnit4ClassRunner {
     @Override
     public void run (RunNotifier notifier){
         super.run(notifier);
-        notifier.addListener(new MyTestListener());
+        notifier.addListener(new GreenciTestListener());
 
         EachTestNotifier testNotifier = new EachTestNotifier(notifier,
                 getDescription());
